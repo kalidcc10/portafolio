@@ -90,11 +90,12 @@ img { max-width: 100%; display: block; }
 ::-webkit-scrollbar { width: 10px; }
 ::-webkit-scrollbar-track { background: var(--bg); }
 ::-webkit-scrollbar-thumb {
-  background: var(--border);
+  background: var(--purple);
   border-radius: 10px;
   border: 2px solid var(--bg);
+  box-shadow: 0 0 10px rgba(139, 92, 246, 0.4);
 }
-::-webkit-scrollbar-thumb:hover { background: var(--purple); }
+::-webkit-scrollbar-thumb:hover { background: var(--purple-light); }
 
 /* ---------- 3. Utilidades ---------- */
 .container {
@@ -546,9 +547,9 @@ img { max-width: 100%; display: block; }
 }
 
 .skill-card:hover {
-  transform: translateY(-6px);
-  border-color: var(--purple);
-  box-shadow: var(--shadow-lg);
+    transform: translateY(-8px);
+    border-color: var(--purple-light);
+    box-shadow: 0 0 25px rgba(139, 92, 246, 0.3);
 }
 
 .skill-card:hover::before { opacity: .05; }
@@ -866,4 +867,16 @@ img { max-width: 100%; display: block; }
     transition: none !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* ---------- C. Efecto dinámico en el título Hero ---------- */
+.hero__title .gradient-text {
+    background-size: 200% auto;
+    animation: gradientShift 6s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
